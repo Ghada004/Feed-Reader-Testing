@@ -35,10 +35,6 @@ $(function() {
             });
         });
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
          // This test looped through each feed and determines that each
          // feed has a name and not empty.
          it('name defined and not empty', function() {
@@ -86,11 +82,13 @@ $(function() {
                 done();
             }, 100);
         });
+
+        // tests that there is at least one entry in feed.
         it('should be called and contain at least one feed.', function() {
             expect(feed.length).toBeGreaterThan(0);
         });
     });
-    // TODO: Write a new test suite named "New Feed Selection"
+
     describe('New Feed Selection', function() {
 
         /* TODO: Write a test that ensures when a new feed is loaded
