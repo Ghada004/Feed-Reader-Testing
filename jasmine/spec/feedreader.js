@@ -80,7 +80,7 @@ $(function() {
             setTimeout(function() {
                 feed = $('.feed').html();
                 done();
-            }, 100);
+            }, 1000);
         });
 
         // tests that there is at least one entry in feed.
@@ -107,7 +107,7 @@ $(function() {
                 feedTwo = $('.feed').html();
                 expect(feedTwo).not.toEqual(feedOne);
                 done();
-            }, 100);
+            }, 1000);
         });
     });
 }());
