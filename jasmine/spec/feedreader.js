@@ -72,28 +72,25 @@ $(function() {
     // Initial entries test suite.
     describe('Initial Entries', function() {
 
-        var feed;
-
         // beforeEach allows for use of asynchronous loadFeed().
         beforeEach(function(done) {
-            loadFeed(0);
-            setTimeout(function() {
-                feed = $('.feed').html();
+            loadFeed(0, function() {
                 done();
-            }, 1000);
+            });
         });
 
         // tests that there is at least one entry in feed.
-        it('should be called and contain at least one feed.', function() {
-            expect(feed.length).toBeGreaterThan(0);
+        it('should be called and contain at least one feed.', function(done) {
+            expect($('.entry').length).toBeGreaterThan(0);
+            done();
         });
     });
 
     describe('New Feed Selection', function() {
 
         // tests that new content is loaded by loadFeed().
-        var feedOne;
-        var feedTwo;
+        var $feedOne;
+        var $feedTwo;
 
         beforeEach(function(done) {
             loadFeed(0, function() {
@@ -102,12 +99,12 @@ $(function() {
             });
         });
 
-        it('should change feed content', function() {
+        it('should change feed content after loading feed', function(done) {
             loadFeed(1, function() {
                 feedTwo = $('.feed').html();
                 expect(feedTwo).not.toEqual(feedOne);
                 done();
-            }, 1000);
+            });
         });
     });
 }());
