@@ -13,7 +13,7 @@ appears at the bottom of the index.html page.
 
 Tests that are green have passed and red have failed.
 
-# The tests:
+## The tests:
 
 1. tests to make sure that the allFeeds variable has been defined and that it is not empty.
 2. loops through each feed and determines if the URL is defined and not empty.
